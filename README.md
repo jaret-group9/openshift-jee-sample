@@ -60,4 +60,35 @@ cache:
 11. OPTIONAL after_deploy
 12. after_script
 
+# Travis CI Client
+Handig
+
+1. Install Ruby (v2.0 of hoger aangeraden) with native extension support
+   ```jshelllanguage
+   sudo apt install ruby
+   sudo apt install ruby-dev
+   ```
+2. Install Travis Gem
+   ```jshelllanguage
+   gem install travis -v 1.8.8 --no-rdoc --no-ri
+
+   Successfully installed travis-1.8.8
+   6 gems installed
+   ```
+3. Go to project directory and login
+   ```
+   travis login
+   ```
+4. Initialize the easy way
+
+
+# resources
+
+1. https://github.com/travis-ci/travis.rb#installation
+2. https://docs.travis-ci.com/user/deployment/cloudfoundry/
+
+## Handy
+
+1. `.git/config` stores the travis slug, change it if you rename GIT repository
+2. Initialize the easy way with `travis init --force`
 

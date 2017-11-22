@@ -2,20 +2,24 @@ language: java
 jdk: oraclejdk8
 
 install:
-  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:
-  - mvn test -B
+- mvn test -B
 
 cache:
   directories:
-  - $HOME/.m2
+  - "$HOME/.m2"
 
 deploy:
-  provider: openshift
-  user: "jelle.aret@group9.nl"
-  password: "@Group901"
-  domain: jee-sample
-  app: travis-sample-app
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: jelle.aret@group9.nl
+  password:
+    secure: LjKGPKEN9Vab90b/kpAkYCNW/4pFzMzIY9DIEEnl/Y4G6YldZSL106y5RibM7DWYFPXr6uyArkXt6ryv4jr3yXsOj1iNm/9OF/5CSPz4Gud/AQGCo+r/vGhFaHZDS9eNP2oJFfL/AtcehjR69oArKRm3+8kMlZg0hvoP2bpLYVnqSrwRE4WsLUFmgXnt3+ppWWmBNT0MG5StoA3BooPAXcOedBXxZ++tpJP7hrUYSDKY2rwJBH1KrVUC48LZ1tLItjziaVfqMPx/1brKoX50IeOsO2desnPNC+JLsrR2vI4JLQo2Q5L0mrfD0Mav4lY28YI33zMvKQycjnMtFBmYTKwDbBQKLq/9Wh/oyh1C/p4bgxQd5ckx6PUsZ8SiBxdRgQVmXVoah2/WS0KV4ltCO5B7EqJK40uMltkE/5v4FWr63nFNzBhCJQk63lRVi2mQy+KQs7S1aPeGMocAqFHneWOZrgtFz/z5uFZMBP/AJ7gfG8JVVgB7vlWGBkdsjtCT/EIssfmNo7CuQ3e0z7WrDMW4OAQmdvxuhB6QZesHEJg1luc2D0B2PaOzWUyDvp8dQlRY36q09H0POQFBj/ocFiUjlzYLLQS9NimQyecih3nl70fll9dUGDn9zSO8g+afFcIzJj4z5uUiYyUDMbPxHYdUT8uwBHGwC/zbRDkfTOQ=
+  organization: travis-sample
+  space: development
   on:
     all_branches: true
+    #repo: jaret-group9/travis-ci-demo
+    #branch: feature/deploy-openshift
