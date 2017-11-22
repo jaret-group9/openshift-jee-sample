@@ -17,3 +17,5 @@ deploy:
   password: "@Group901"
   domain: jee-sample
   app: travis-sample-app
+  on:
+    all_branches: true
