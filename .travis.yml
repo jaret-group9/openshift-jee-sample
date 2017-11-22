@@ -10,3 +10,10 @@ script:
 cache:
   directories:
   - $HOME/.m2
+
+deploy:
+  provider: openshift
+  user: "jelle.aret@group9.nl"
+  password: "@Group901"
+  domain: jee-sample
+  app: travis-sample-app
