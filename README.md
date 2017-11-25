@@ -86,7 +86,7 @@ Handig
 
 1. https://github.com/travis-ci/travis.rb#installation
 2. https://docs.travis-ci.com/user/deployment/cloudfoundry/
-
+3. http://cruft.io/posts/using-travis-ci-to-deploy-to-cloud-foundry/
 ## Handy
 
 1. `.git/config` stores the travis slug, change it if you rename GIT repository
